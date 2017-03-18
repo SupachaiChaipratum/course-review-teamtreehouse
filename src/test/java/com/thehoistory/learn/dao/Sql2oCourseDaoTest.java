@@ -40,4 +40,19 @@ public class Sql2oCourseDaoTest {
 
 
     }
+
+    @Test
+    public void addedCourseAreReturnFromFindAll() throws Exception{
+        Course course = new Course("Test","Http://test.com");
+
+        dao.add(course);
+
+
+         assertEquals(1,dao.findAll().size());
+    }
+
+    @Test
+    public void onCoursesReturnEmptyList() throws  Exception {
+        assertEquals(0,dao.findAll().size());
+    }
 }

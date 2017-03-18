@@ -1,8 +1,8 @@
-package com.thehoistory.learn.model.com.thehoistory.learn.dao;
+package com.thehoistory.learn.dao;
 
 
 import com.thehoistory.learn.model.Course;
-import com.thehoistory.learn.model.com.thehoistory.learn.exc.DaoException;
+import com.thehoistory.learn.exc.DaoException;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.thehoistory.learn.model.com.thehoistory.learn.exc;
+package com.thehoistory.learn.exc;
 
 
 public class DaoException extends Exception {

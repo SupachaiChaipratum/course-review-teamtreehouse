@@ -18,16 +18,17 @@ public class Sql2oCourseDao implements CourseDao{
     }
 
     public void add(Course course) throws DaoException {
-        String sql = "INSERT INTO courses(name, url) VALUE (:name, :url)";
-        try (Connection con = sql2o.open()){
-            int id =  (int)con.createQuery(sql)
+        String sql = "INSERT INTO courses(name, url) VALUES (:name, :url)";
+        try (Connection con = sql2o.open()) {
+            int id = (int) con.createQuery(sql)
                     .bind(course)
                     .executeUpdate()
                     .getKey();
             course.setId(id);
-        } catch (Sql2oException ex){
-            throw new DaoException(ex,"Problem adding course");
+        } catch (Sql2oException ex) {
+            throw new DaoException(ex, "Problem adding course");
         }
+
     }
 
     public List<Course> findAll() {
